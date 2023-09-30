@@ -1,0 +1,46 @@
+
+        /* Set the background color for the entire page */
+        body {
+            background-color: #3498db; /* You can change the color code here */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: Arial, sans-serif; /* Set a font for the text */
+        }
+
+        /* Center the div both horizontally and vertically */
+        .center-div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white; /* Background color for the div */
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add a shadow to the div */
+            text-align: center;
+        }
+
+        /* Style the heading */
+        h1 {
+            color: #3498db; /* Heading color */
+        }
+
+        /* Style the paragraph */
+        p {
+            font-size: 18px; /* Font size for the paragraph */
+        }
+
+        /* Style the button */
+        .styled-button {
+            background-color: #3498db; /* Button background color */
+            color: white; /* Button text color */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow to the button */
+        }
+
+        /* Hover effect for the button */
+        .styled-button:hover {
+            background-color: #2980b9; /* Button background color on hover */
+        }

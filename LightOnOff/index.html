@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #333; /* Background color of the page */
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #light {
+        width: 100px;
+        height: 100px;
+        background-color: #f1c40f; /* Default light color */
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      #light.on {
+        background-color: #f1c40f; /* Light on color */
+      }
+
+      #light.off {
+        background-color: #333; /* Light off color */
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 20px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div id="light" class="on" onclick="toggleLight()"></div>
+        <p id="status">Light is ON</p> -->
+
+      <h1 id="txt">can you turn on the light?</h1>
+
+      <img id="myImg" style="width: 10rem" src="./img/off.png" alt="" />
+
+      <button onclick="lightOn()">
+        bulb on
+      </button>
+      <button onclick="lightOff()">
+        off
+      </button>
+    </div>
+
+    <script>
+      const lightOn = () => {
+        document.getElementById("myImg").src = "./img/buibon.png";
+        document.getElementById("txt").innerText = "light On"
+      };
+
+      const lightOff = () => {
+        document.getElementById("myImg").src = "./img/off.png";
+        document.getElementById("txt").innerText = "light Off";
+      };
+    </script>
+  </body>
+</html>

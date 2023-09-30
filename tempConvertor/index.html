@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>temperature</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="tempCalc" onsubmit="calculateTemp(); return false">
+      <input type="number" name="temp" id="temp" />
+      <select name="temp_diff" id="temp_diff">
+        <option value="cel">C</option>
+        <option value="fah">F</option>
+      </select>
+
+      <input type="submit" name="temp" />
+
+      <div>
+        <h1 id="resultMain"></h1>
+      </div>
+    </form>
+
+    <script>
+      const calculateTemp = () => {
+        const tempNumber = document.getElementById("temp").value;
+        console.log(temp);
+
+        const tempSelected = document.getElementById("temp_diff");
+        const tempValue =
+          tempSelected.options[tempSelected.selectedIndex].value;
+        console.log(tempValue);
+
+        const celToFah = (cel) => {
+          let fah = Math.round((cel * 9) / 5 + 32);
+          return fah;
+        };
+
+        const fahToCel = (fah) => {
+          let cel = Math.round(((fah - 32) * 5) / 9);
+          return cel;
+        };
+
+        let result;
+
+        if (tempValue === "cel") {
+          result = celToFah(tempNumber);
+          document.getElementById("resultMain").innerHTML = `${result} Fah`;
+        } else {
+          result = fahToCel(tempNumber);
+          document.getElementById("resultMain").innerHTML = `${result} cel`;
+        }
+      };
+    </script>
+  </body>
+</html>

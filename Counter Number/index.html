@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Icon Cards</title>
+    <!-- Add Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: blueviolet;
+      }
+
+      .icon-card {
+        background-color: #3498db; /* Background color for the card */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add a shadow to the card */
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+      }
+
+      .icon {
+        font-size: 2rem; /* Adjust the icon size */
+        margin-bottom: 10px;
+      }
+
+      .number {
+        font-size: 3rem; /* Adjust the number size */
+      }
+
+      /* Bootstrap utility classes to create a row with equal spacing */
+      .d-flex > * {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="row"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2rem;
+        "
+      >
+        <div class="col-md-4">
+          <div class="icon-card">
+            <i class="fas fa-user icon"></i>
+            <div class="number counter" data-target="4000"></div>
+            <p>User</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="icon-card">
+            <i class="fas fa-heart icon"></i>
+            <div class="number counter" data-target="5000"></div>
+            <p>Heart</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="icon-card">
+            <i class="fas fa-star icon"></i>
+            <div class="number counter" data-target="12000"></div>
+            <p>Star</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const counters = document.querySelectorAll(".counter");
+
+      counters.forEach((counter) => {
+        // console.log(counter)
+        counter.innerHTML = 0;
+
+        const updateCounter = () => {
+          const targetCount = +counter.getAttribute("data-target");
+          //   console.log(targetCount);
+
+          const startingCount = Number(counter.innerHTML);
+
+          const incr = targetCount / 100;
+
+          if (startingCount < targetCount) {
+            counter.innerHTML = `${Math.round(startingCount + incr)}`;
+            setTimeout(updateCounter, 10);
+          }else{
+            counter.innerHTML = targetCount
+          }
+        };
+        // console.log(updateCounter());
+        updateCounter();
+      });
+    </script>
+  </body>
+</html>
